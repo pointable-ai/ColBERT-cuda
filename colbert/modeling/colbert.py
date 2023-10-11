@@ -26,7 +26,7 @@ class ColBERT(BaseColBERT):
         if self.colbert_config.mask_punctuation:
             self.skiplist = {w: True
                              for symbol in string.punctuation
-                             for w in [symbol, self.raw_tokenizer.encode(symbol, add_special_tokens=False).to(DEVICE)[0]]}
+                             for w in [symbol, self.raw_tokenizer.encode(symbol, add_special_tokens=False)[0]]}
         self.pad_token = self.raw_tokenizer.pad_token_id
 
 
