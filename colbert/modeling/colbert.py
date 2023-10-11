@@ -2,6 +2,7 @@ from colbert.infra.config.config import ColBERTConfig
 from colbert.search.strided_tensor import StridedTensor
 from colbert.utils.utils import print_message, flatten
 from colbert.modeling.base_colbert import BaseColBERT
+from colbert.parameters import DEVICE
 
 import torch
 import string
@@ -25,7 +26,7 @@ class ColBERT(BaseColBERT):
         if self.colbert_config.mask_punctuation:
             self.skiplist = {w: True
                              for symbol in string.punctuation
-                             for w in [symbol, self.raw_tokenizer.encode(symbol, add_special_tokens=False)[0]]}
+                             for w in [symbol, self.raw_tokenizer.encode(symbol, add_special_tokens=False).to(DEVICE)[0]]}
         self.pad_token = self.raw_tokenizer.pad_token_id
 
 
