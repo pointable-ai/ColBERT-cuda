@@ -4,7 +4,7 @@ import ujson
 
 from colbert.utils.utils import print_message
 from colbert.infra.provenance import Provenance
-from utility.utils.save_metadata import get_metadata_only
+from colbert.utility.utils.save_metadata import get_metadata_only
 
 
 class Examples:
