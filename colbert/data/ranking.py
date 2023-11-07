@@ -5,7 +5,7 @@ from colbert.infra.provenance import Provenance
 
 from colbert.infra.run import Run
 from colbert.utils.utils import print_message, groupby_first_item
-from colbert.utility.utils.save_metadata import get_metadata_only
+from colbert.utility.utils.save_metadata import get_metadata_only #TODO: FIXME: fix imports
 
 
 def numericize(v):
